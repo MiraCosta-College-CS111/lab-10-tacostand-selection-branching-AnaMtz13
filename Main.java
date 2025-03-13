@@ -1,7 +1,7 @@
-// PARTNER NAME:
+// PARTNER NAME: Ana Maria Jose 
 // PARTNER NAME:
 // CS111 SECTION #:
-// DATE:
+// DATE: 03/13/2025
 
 public class Main
 {

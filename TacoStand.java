@@ -2,6 +2,10 @@ public class TacoStand
 {
     /* CONSTANT VARIABLES */
 	public static final String BAR = "----------------------------------------";
+	public static final String CARNE_ASADA = String.format("%2d. %-21s [$%5.2f]%n", 1, "Carne Asada (Steak)",  2.5); ;
+	public static final String POLLO_ASADO = String.format("%2d. %-21s [$%5.2f]%n", 2, "Pollo Asado (Chicken)", 1.75);
+	public static final String LENGUA = String.format("%2d. %-21s [$%5.2f]%n", 3, "Lengua (Beef Tongue)", 3.0);
+	public static final String ULTIMATE_TACO = String.format("%2d. %-21s [$%5.2f]%n", 4, "Ultimate Taco", 18.0);
 
 	/* STATIC VARIABLES */
 	private static int numAsada = 0, numPollo = 0, numLengua = 0, numUltimate = 0;
@@ -22,11 +26,11 @@ public class TacoStand
 	public static void printMenu()
 	{
 		System.out.println("Menu options:\n" + TacoStand.BAR);
-		System.out.printf("%2d. %-21s [$%5.2f]%n", 1, "Carne Asada (Steak)", 2.5);
-		System.out.printf("%2d. %-21s [$%5.2f]%n", 2, "Pollo Asado (Chicken)", 1.75);
-		System.out.printf("%2d. %-21s [$%5.2f]%n", 3, "Lengua (Beef Tongue)", 3.0);
-		System.out.printf("%2d. %-21s [$%5.2f]%n", 4, "Ultimate Taco", 18.0);
-		System.out.println(TacoStand.BAR);
+		System.out.print(TacoStand.CARNE_ASADA);
+		System.out.print(TacoStand.POLLO_ASADO);
+		System.out.print(TacoStand.LENGUA);
+		System.out.print(TacoStand.ULTIMATE_TACO);
+		System.out.print(TacoStand.BAR);
 	}
 	
 	/**
@@ -71,17 +75,25 @@ public class TacoStand
 	 */
 	public static boolean orderSupplies(double budget)
 	{
-		//tacos cost 75 cents each in supplies, keeping it simple
-	    int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-	    TacoStand.totalFunds -= budget;
+		if(budget <= totalFunds)
+		{
+			//tacos cost 75 cents each in supplies, keeping it simple
+			int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
-	    TacoStand.numAsada += tacosEach;
-	    TacoStand.numPollo += tacosEach;
-	    TacoStand.numLengua += tacosEach;
-	    TacoStand.numUltimate += tacosEach;
+			TacoStand.totalFunds -= budget;
+	
+			TacoStand.numAsada += tacosEach;
+			TacoStand.numPollo += tacosEach;
+			TacoStand.numLengua += tacosEach;
+			TacoStand.numUltimate += tacosEach;
 
-		return true;  //TODO: this is stubbed, replace this line with your actual code!
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 	/**
