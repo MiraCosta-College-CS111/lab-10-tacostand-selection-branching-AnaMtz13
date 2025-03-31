@@ -6,6 +6,7 @@ public class TacoStand
 	public static final String POLLO_ASADO = String.format("%2d. %-21s [$%5.2f]%n", 2, "Pollo Asado (Chicken)", 1.75);
 	public static final String LENGUA = String.format("%2d. %-21s [$%5.2f]%n", 3, "Lengua (Beef Tongue)", 3.0);
 	public static final String ULTIMATE_TACO = String.format("%2d. %-21s [$%5.2f]%n", 4, "Ultimate Taco", 18.0);
+	public static final int ASADA_OPTION = 1, POLLO_OPTION = 2, LENGUA_OPTION = 3, ULTIMATE_OPTION = 4;
 
 	/* STATIC VARIABLES */
 	private static int numAsada = 0, numPollo = 0, numLengua = 0, numUltimate = 0;
@@ -105,7 +106,32 @@ public class TacoStand
 	 */
 	public static void updateTotalFunds(int tacoOption, int numTacos)
 	{
-		//TODO: this is stubbed, replace this line with your actual code!
+
+		double cost;
+		switch(tacoOption) {
+			case TacoStand.ASADA_OPTION:
+			 cost = 1.50;
+			 TacoStand.numAsada -= numTacos;
+			 break;
+			case TacoStand.POLLO_OPTION:
+			 cost = 1.75;
+			 TacoStand.numPollo -= numTacos; 
+			 break;
+			case TacoStand.LENGUA_OPTION:
+			 cost = 3.00;
+			 TacoStand.numLengua -= numTacos;
+			 break;
+			case TacoStand.ULTIMATE_OPTION:
+			 cost = 18.0;
+			 TacoStand.numUltimate -= numTacos;
+			 break;
+			default:
+			 cost = 0;
+			 break;
+
+		}
+
+		TacoStand.totalFunds += cost * numTacos;
 	}
 	
 	
