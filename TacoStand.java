@@ -145,6 +145,15 @@ public class TacoStand
 	 */
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
-		return false; 
+		if((tacoOption == TacoStand.ASADA_OPTION && numTacos <= TacoStand.numAsada)||(tacoOption == TacoStand.POLLO_OPTION && numTacos <= TacoStand.numPollo)||(tacoOption == TacoStand.LENGUA_OPTION && numTacos <= TacoStand.numLengua)||(tacoOption == TacoStand.ULTIMATE_OPTION && numTacos <= TacoStand.numUltimate))
+		{
+         return true; 
+		}
+		else 
+		{
+		 return false;
+		}
+		
+		
 	}
 }
