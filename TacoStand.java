@@ -76,8 +76,8 @@ public class TacoStand
 	public static boolean orderSupplies(double budget)
 	{
 
-		if(budget <= totalFunds)
-		{
+		if(budget <= TacoStand.totalFunds){
+		
 			//tacos cost 75 cents each in supplies, keeping it simple
 			int tacosEach = (int)(Math.round(budget / 0.75 / 4));
 
