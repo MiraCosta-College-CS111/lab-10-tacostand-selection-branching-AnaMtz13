@@ -110,7 +110,7 @@ public class TacoStand
 		double cost;
 		switch(tacoOption) {
 			case TacoStand.ASADA_OPTION:
-			 cost = 1.50;
+			 cost = 2.50;
 			 TacoStand.numAsada -= numTacos;
 			 break;
 			case TacoStand.POLLO_OPTION:
