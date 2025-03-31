@@ -67,8 +67,15 @@ public class Main
 		numTacosOrdered = UtilityBelt.readInt("Enter number of tacos you want> ", 1, 50);
 
 		//CALCULATION + OUTPUT SECTION
-		TacoStand.updateTotalFunds(option, numTacosOrdered);
-		Main.printConfirmation(numTacosOrdered);
+		if(TacoStand.areTacosAvailable(option, numTacosOrdered)){
+			TacoStand.updateTotalFunds(option, numTacosOrdered);
+			Main.printConfirmation(numTacosOrdered);
+		}
+		else
+		{
+			System.out.println("Sorry, we don't have enough tacos!");
+		}
+		
 	}
 
 	/**
