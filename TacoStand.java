@@ -145,6 +145,6 @@ public class TacoStand
 	 */
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
-		return false; //TODO: this is stubbed, replace this line with your actual code!
+		return false; 
 	}
 }

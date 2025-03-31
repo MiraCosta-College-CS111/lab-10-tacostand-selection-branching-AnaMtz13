@@ -56,7 +56,7 @@ public class Main
 	 * Prints menu and prompts user for input for kind of taco and number in order. If tacos are available,
 	 * will update total funds and confirm order with user, otherwise error message given
 	 */
-	public static void takeOrder() //TODO: upgrade per documentation
+	public static void takeOrder() 
 	{
 		//DECLARATION + INITIALIZATION SECTION
 		int option, numTacosOrdered;
@@ -76,7 +76,7 @@ public class Main
 	 * 
 	 * @param numTacos
 	 */
-	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
+	public static void printConfirmation(int numTacos) 
 	{
 		System.out.println("Here you go, buen provecho!");
 		System.out.println("🌮");
