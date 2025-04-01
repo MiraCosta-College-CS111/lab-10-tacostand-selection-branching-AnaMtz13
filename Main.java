@@ -82,10 +82,21 @@ public class Main
 	 * Prints confirmation message that varies based on number of tacos in order
 	 * 
 	 * @param numTacos
+	 * @param tacoEmoji
 	 */
 	public static void printConfirmation(int numTacos) 
 	{
 		System.out.println("Here you go, buen provecho!");
-		System.out.println("🌮");
-	}
+		if(numTacos == 1 || numTacos == 2){
+			System.out.println("🌮");
+		}
+		else {
+			if(numTacos == 3 || numTacos == 4 || numTacos == 5){
+				System.out.println("🌮🌮🌮");
+			}
+			else {System.out.println("🌮🌮🌮🌮🌮");}
+			
+		}
+	}		
+	
 }
