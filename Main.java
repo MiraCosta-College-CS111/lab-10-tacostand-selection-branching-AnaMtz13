@@ -82,7 +82,7 @@ public class Main
 	 * Prints confirmation message that varies based on number of tacos in order
 	 * 
 	 * @param numTacos
-	 * @param tacoEmoji
+	 * 
 	 */
 	public static void printConfirmation(int numTacos) 
 	{
