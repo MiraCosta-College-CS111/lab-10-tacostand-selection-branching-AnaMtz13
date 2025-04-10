@@ -3,9 +3,7 @@
 // CS111 SECTION #:
 // DATE: 03/13/2025
 
-public class Main
-{
-
+public class Main {
 	/**
 	 * ALGORITHM:
 	 * - Add total funds to taco stand
@@ -25,19 +23,19 @@ public class Main
 		TacoStand.orderSupplies(15);
 
 		System.out.println("OPENING UP THE STAND...");
-		System.out.println( TacoStand.getStatus() +"\n\n");
+		System.out.println(TacoStand.getStatus() +"\n\n");
 
 		Main.printWelcome();
 		System.out.println("\n");
 		
 		Main.takeOrder();
-		//call takeOrder more times if you'd like! (once everything works once though!)
+		//can call multiple times
 
 		System.out.println("--------CART IS CLOSED---------\n\n" + TacoStand.getStatus());
 	}
 
 	/**
-	 * Outputs welcome message to start program that user sees
+	 * Prints a welcome message for the user
 	 */
 	public static void printWelcome()
 	{
@@ -53,11 +51,10 @@ public class Main
 	}
 	
 	/**
-	 * Prints menu and prompts user for input for kind of taco and number in order. If tacos are available,
-	 * will update total funds and confirm order with user, otherwise error message given
+	 * Prints the menu, asks the user for the taco option and number of tacos,
+	 * updates total funds based on user input and prints an order confirmation
 	 */
-	public static void takeOrder() 
-	{
+	public static void takeOrder(){
 		//DECLARATION + INITIALIZATION SECTION
 		int option, numTacosOrdered;
 
@@ -67,36 +64,32 @@ public class Main
 		numTacosOrdered = UtilityBelt.readInt("Enter number of tacos you want> ", 1, 50);
 
 		//CALCULATION + OUTPUT SECTION
-		if(TacoStand.areTacosAvailable(option, numTacosOrdered)){
+		if (TacoStand.areTacosAvailable(option, numTacosOrdered))
+		{
 			TacoStand.updateTotalFunds(option, numTacosOrdered);
 			Main.printConfirmation(numTacosOrdered);
 		}
 		else
 		{
-			System.out.println("Sorry, we don't have enough tacos!");
+			System.out.println("We don't have that many tacos, sorry! Try again :(");
 		}
-		
 	}
 
 	/**
-	 * Prints confirmation message that varies based on number of tacos in order
+	 * Prints a confirmation message that varies based on the number of tacos in the order
 	 * 
 	 * @param numTacos
-	 * 
 	 */
 	public static void printConfirmation(int numTacos) 
 	{
-		System.out.println("Here you go, buen provecho!");
-		if(numTacos == 1 || numTacos == 2){
-			System.out.println("🌮");
-		}
-		else {
-			if(numTacos == 3 || numTacos == 4 || numTacos == 5){
-				System.out.println("🌮🌮🌮");
-			}
-			else {System.out.println("🌮🌮🌮🌮🌮");}
-			
-		}
-	}		
-	
+    System.out.println("Here you go, buen provecho!");
+    int tacosToDisplay = Math.min(numTacos, 20);
+    for (int i = 0; i < tacosToDisplay; i++) 
+	{
+        System.out.print("🌮");
+		
+    }
+	System.out.println(); // New line after printing tacos
+	System.out.println(); // I needed another one 
+	}
 }

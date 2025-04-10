@@ -31,7 +31,7 @@ public class TacoStand
 		System.out.print(TacoStand.POLLO_ASADO);
 		System.out.print(TacoStand.LENGUA);
 		System.out.print(TacoStand.ULTIMATE_TACO);
-		System.out.print(TacoStand.BAR);
+		System.out.print(TacoStand.BAR + "\n");
 	}
 	
 	/**
